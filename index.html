@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5b1e2b">
+  <title>Magnificat app — seu espaço</title>
+  <meta name="description" content="Seu espaço pessoal para organizar datas, diário, finanças e vida pastoral.">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><img class="brand-logo" src="assets/magnificat-logo.jpg" alt="Logo Magnificat app"><div><strong>Magnificat app</strong><small>seu espaço, seu tempo</small></div></div>
+    <nav aria-label="Navegação principal">
+      <button class="nav-link active" data-view="inicio"><span><img src="assets/inicio.png" alt=""></span> Início</button>
+      <button class="nav-link" data-view="calendario"><span><img src="assets/calendario.png" alt=""></span> Calendário</button>
+      <button class="nav-link" data-view="datas"><span><img src="assets/tarefas.png" alt=""></span> Tarefas</button>
+      <button class="nav-link" data-view="financeiro"><span><img src="assets/financas.png" alt=""></span> Finanças</button>
+      <button class="nav-link" data-view="diario"><span><img src="assets/diario.png" alt=""></span> Diário</button>
+      <button class="nav-link" data-view="pastorais"><span><img src="assets/pastorais.png" alt=""></span> Pastorais</button>
+      <button class="nav-link" data-view="roles"><span><img src="assets/roles.png" alt=""></span> Rolês</button>
+      <button class="nav-link" data-view="mais"><span><img src="assets/mais.png" alt=""></span> Mais</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="privacy-dot"></div><span>Seus dados ficam neste dispositivo</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow" id="today-label">SEU ESPAÇO, SEU TEMPO</p><h1 id="page-title">Bom ter você aqui.</h1></div>
+      <button class="primary-button" id="quick-add">＋ Adicionar</button>
+    </header>
+
+    <section class="view active" id="view-inicio">
+      <div class="welcome-card">
+        <div><p class="eyebrow light">UM PASSO DE CADA VEZ</p><h2>Organize a vida<br>do seu jeito.</h2><p>Suas datas, pensamentos e finanças em um só lugar.</p></div>
+        <div class="welcome-logo-wrap"><img class="welcome-logo" src="assets/magnificat-logo.jpg" alt="Magnificat app"></div><div class="welcome-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-one"></div><div class="hill hill-two"></div></div>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-icon green">▦</div><p>Próximas tarefas</p><strong id="stat-tasks">0</strong><small>pendentes</small></article>
+        <article class="stat-card"><div class="stat-icon lilac">✎</div><p>Entradas no diário</p><strong id="stat-diary">0</strong><small>momentos registrados</small></article>
+        <article class="stat-card"><div class="stat-icon peach">↗</div><p>Saldo do mês</p><strong id="stat-balance">R$ 0,00</strong><small>receitas menos despesas</small></article>
+      </div>
+      <div class="content-grid">
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">NÃO DEIXE PARA DEPOIS</p><h3>Próximas datas</h3></div><button class="text-button" data-go="datas">Ver todas →</button></div><div id="home-tasks" class="empty-state">Tudo começa com um pequeno registro.<br>Adicione uma data ou tarefa.</div></article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">UM MOMENTO SEU</p><h3>Diário recente</h3></div><button class="text-button" data-go="diario">Abrir diário →</button></div><div id="home-diary" class="empty-state">Guarde aqui pensamentos, ideias e lembranças.</div></article>
+      </div>
+    </section>
+
+    <section class="view" id="view-calendario">
+      <div class="section-intro"><div><p class="eyebrow">TUDO NO MESMO LUGAR</p><h2>Calendário geral</h2><p>Veja seus compromissos pessoais, financeiros e pastorais por dia.</p></div></div>
+      <div class="panel">
+        <div class="calendar-toolbar"><button class="secondary-button" id="calendar-prev" aria-label="Mês anterior">←</button><h3 id="calendar-month-title">Mês</h3><button class="secondary-button" id="calendar-next" aria-label="Próximo mês">→</button><button class="text-button" id="calendar-today">Hoje</button></div>
+        <div class="calendar-weekdays"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">AGENDA DO DIA</p><h3 id="calendar-selected-title">Selecione um dia</h3></div></div><div id="calendar-day-list" class="item-list"></div></div>
+    </section>
+
+    <section class="view" id="view-datas">
+      <div class="section-intro"><div><p class="eyebrow">PLANEJE COM LEVEZA</p><h2>Datas e tarefas</h2><p>Compromissos, prazos e lembretes em um só lugar.</p></div><button class="primary-button" id="add-task">＋ Nova data</button></div>
+      <div class="panel"><div class="toolbar"><input id="task-search" type="search" placeholder="Buscar data ou tarefa…"><select id="task-filter" aria-label="Filtrar tarefas"><option value="all">Todas</option><option value="pending">Pendentes</option><option value="done">Concluídas</option></select></div><div id="task-list" class="item-list"></div></div>
+    </section>
+
+    <section class="view" id="view-diario">
+      <div class="section-intro"><div><p class="eyebrow">ESCREVA SEM PRESSA</p><h2>Diário pessoal</h2><p>Um espaço privado para registrar o que importa para você.</p></div><button class="primary-button" id="add-entry">＋ Nova entrada</button></div>
+      <div class="diary-layout"><div class="panel diary-editor"><h3 id="diary-form-title">Registrar um momento</h3><form id="diary-form"><input id="entry-title" maxlength="100" placeholder="Dê um título a este momento" required><div class="mood-row"><label for="entry-mood">Como você está?</label><select id="entry-mood"><option>🙂 Bem</option><option>😊 Feliz</option><option>😌 Em paz</option><option>😐 Neutro</option><option>😟 Preocupado</option><option>😔 Triste</option><option>😤 Estressado</option></select></div><textarea id="entry-body" rows="7" placeholder="Escreva livremente. O que aconteceu hoje? O que você está sentindo?" required></textarea><label for="entry-images">Imagens (opcional)</label><input id="entry-images" type="file" accept="image/*" multiple><small class="upload-help">Você pode anexar fotos ao seu registro. As imagens serão reduzidas para economizar espaço.</small><div id="entry-image-preview" class="image-preview"></div><div class="form-actions"><button class="primary-button" type="submit">Salvar entrada</button><button class="secondary-button hidden" id="cancel-entry" type="button">Cancelar edição</button></div></form></div><div class="panel"><div class="panel-heading"><div><p class="eyebrow">SUAS MEMÓRIAS</p><h3>Entradas anteriores</h3></div></div><div id="diary-list" class="item-list"></div></div></div>
+    </section>
+
+    <section class="view" id="view-financeiro">
+      <div class="section-intro"><div><p class="eyebrow">CUIDE DO SEU DINHEIRO</p><h2>Financeiro</h2><p>Registre entradas e gastos para entender seu mês.</p></div><button class="primary-button" id="add-transaction">＋ Lançamento</button></div>
+      <div class="finance-summary"><article class="finance-card income"><p>Receitas do mês</p><strong id="month-income">R$ 0,00</strong><small>Entradas registradas</small></article><article class="finance-card expense"><p>Despesas do mês</p><strong id="month-expense">R$ 0,00</strong><small>Saídas registradas</small></article><article class="finance-card balance"><p>Saldo do mês</p><strong id="month-net">R$ 0,00</strong><small>Receitas − despesas</small></article></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">ACOMPANHAMENTO</p><h3>Lançamentos</h3></div><select id="finance-month" aria-label="Mês dos lançamentos"></select></div><div id="transaction-list" class="item-list"></div></div>
+    </section>
+
+    <section class="view" id="view-pastorais">
+      <div class="section-intro"><div><p class="eyebrow">SERVIÇO E MISSÃO</p><h2>Pastorais</h2><p>Escolha a área que deseja organizar.</p></div></div>
+      <div class="category-grid pastoral-categories">
+        <button class="category-card" data-go="pascom"><img src="assets/pascom.png" alt=""><strong>PASCOM</strong><small>Comunicação, coberturas e publicações</small></button>
+        <button class="category-card" data-go="juventude"><img src="assets/juventude.png" alt=""><strong>Juventude</strong><small>Encontros, retiros e atividades</small></button>
+        <button class="category-card" data-go="nucleo"><img src="assets/nucleo.png" alt=""><strong>Núcleo</strong><small>Responsabilidades e pendências</small></button>
+        <button class="category-card" data-go="acolito"><img src="assets/acolitos.png" alt=""><strong>Acólitos</strong><small>Missas e escalas pessoais</small></button>
+      </div>
+    </section>
+
+
+    <section class="view" id="view-liturgia">
+      <div class="section-intro">
+        <div><p class="eyebrow">PALAVRA DE DEUS</p><h2>Bíblia e orações</h2><p>Acompanhe a Liturgia Diária diretamente da Canção Nova.</p></div>
+      </div>
+      <div class="panel liturgia-panel">
+        <div class="liturgia-heading">
+          <img src="assets/biblia.png" alt="" class="liturgia-icon">
+          <div><h3>Liturgia Diária — Canção Nova</h3><p>Leituras bíblicas e conteúdo para acompanhar a liturgia do dia.</p></div>
+        </div>
+        <p>O conteúdo pertence ao site oficial da Canção Nova e precisa de conexão com a internet.</p>
+        <a class="primary-button liturgia-link" href="https://liturgia.cancaonova.com/pb/liturgia/" target="_blank" rel="noopener noreferrer">Abrir Liturgia Diária ↗</a>
+        <div class="liturgia-embed-wrap">
+          <iframe title="Liturgia Diária da Canção Nova" src="https://liturgia.cancaonova.com/pb/liturgia/" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <p class="embed-fallback">Se o site não aparecer nesta janela, toque em “Abrir Liturgia Diária” para acessá-lo diretamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-mais">
+      <div class="section-intro"><div><p class="eyebrow">ATALHOS E FERRAMENTAS</p><h2>Mais</h2><p>Acesse recursos pessoais e categorias do aplicativo.</p></div></div>
+      <div class="category-grid">
+        <button class="category-card" data-go="liturgia"><img src="assets/oracao.png" alt=""><strong>Bíblia e orações</strong><small>Acesse a Liturgia Diária da Canção Nova e conteúdos para sua oração.</small></button>
+        <button class="category-card" data-go="liturgia"><img src="assets/biblia.png" alt=""><strong>Liturgia diária</strong><small>Leia as leituras do dia no site da Canção Nova.</small></button>
+        <button class="category-card" data-go="diario"><img src="assets/intencoes.png" alt=""><strong>Intenções</strong><small>Registre pedidos e agradecimentos.</small></button>
+        <button class="category-card" data-go="diario"><img src="assets/intencoes.png" alt=""><strong>Gratidão</strong><small>Registre motivos de gratidão no diário.</small></button>
+        <button class="category-card" data-go="roles"><img src="assets/galeria.png" alt=""><strong>Galeria</strong><small>Veja fotos anexadas aos seus rolês e registros.</small></button>
+        <button class="category-card" data-go="inicio"><img src="assets/perfil.png" alt=""><strong>Perfil pessoal</strong><small>Resumo do seu espaço pessoal.</small></button>
+        <button class="category-card" data-go="inicio"><img src="assets/notificacoes.png" alt=""><strong>Lembretes</strong><small>Consulte datas e tarefas no calendário.</small></button>
+        <button class="category-card" data-go="inicio"><img src="assets/mais.png" alt=""><strong>Configurações</strong><small>Preferências básicas do aplicativo.</small></button>
+        <button class="category-card" data-go="inicio"><img src="assets/ajuda.png" alt=""><strong>Ajuda</strong><small>Consulte as orientações abaixo.</small></button>
+      </div>
+      <div class="panel help-panel"><h3>Sobre seus dados</h3><p>Os registros ficam salvos neste navegador e neste dispositivo. Para evitar perder informações, faça cópias de segurança do navegador ou exporte os dados antes de trocar de aparelho. A sincronização entre dispositivos não está ativada.</p></div>
+    </section>
+
+    <section class="view pastoral-view" id="view-pascom">
+      <div class="section-intro"><div><p class="eyebrow">PASTORAL DA COMUNICAÇÃO</p><h2>PASCOM</h2><p>Calendário de eventos, coberturas e atividades de comunicação.</p></div><button class="primary-button" data-add-pastoral="pascom">＋ Novo evento</button></div>
+      <div class="pastoral-summary"><div><strong id="count-pascom">0</strong><span>eventos cadastrados</span></div><div><strong id="next-pascom">—</strong><span>próxima atividade</span></div></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">CALENDÁRIO</p><h3>Eventos da PASCOM</h3></div><input class="month-filter" id="filter-pascom" type="month" aria-label="Filtrar mês da PASCOM"></div><div class="item-list" id="list-pascom"></div></div>
+    </section>
+    <section class="view pastoral-view" id="view-juventude">
+      <div class="section-intro"><div><p class="eyebrow">JUVENTUDE SAGRADA FACE</p><h2>Juventude</h2><p>Encontros, retiros, formações e eventos do grupo.</p></div><button class="primary-button" data-add-pastoral="juventude">＋ Novo evento</button></div>
+      <div class="pastoral-summary"><div><strong id="count-juventude">0</strong><span>eventos cadastrados</span></div><div><strong id="next-juventude">—</strong><span>próxima atividade</span></div></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">CALENDÁRIO</p><h3>Eventos da Juventude</h3></div><input class="month-filter" id="filter-juventude" type="month" aria-label="Filtrar mês da Juventude"></div><div class="item-list" id="list-juventude"></div></div>
+    </section>
+    <section class="view pastoral-view" id="view-nucleo">
+      <div class="section-intro"><div><p class="eyebrow">COORDENAÇÃO E SERVIÇO</p><h2>Núcleo JSF</h2><p>Suas responsabilidades, pendências e combinados com o núcleo.</p></div><button class="primary-button" data-add-pastoral="nucleo">＋ Nova responsabilidade</button></div>
+      <div class="pastoral-summary"><div><strong id="count-nucleo">0</strong><span>responsabilidades</span></div><div><strong id="pending-nucleo">0</strong><span>pendentes</span></div></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">SEU ACOMPANHAMENTO</p><h3>Responsabilidades do núcleo</h3></div><select id="filter-nucleo" aria-label="Filtrar responsabilidades"><option value="all">Todas</option><option value="pending">Pendentes</option><option value="done">Concluídas</option></select></div><div class="item-list" id="list-nucleo"></div></div>
+    </section>
+    <section class="view pastoral-view" id="view-acolito">
+      <div class="section-intro"><div><p class="eyebrow">SERVIÇO AO ALTAR</p><h2>Acólito</h2><p>Registre as missas em que você se voluntariou para servir.</p></div><button class="primary-button" data-add-pastoral="acolito">＋ Registrar missa</button></div>
+      <div class="pastoral-summary"><div><strong id="count-acolito">0</strong><span>missas registradas</span></div><div><strong id="next-acolito">—</strong><span>próxima missa</span></div></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">ESCALAS PESSOAIS</p><h3>Missas em que vou servir</h3></div><input class="month-filter" id="filter-acolito" type="month" aria-label="Filtrar mês de missas"></div><div class="item-list" id="list-acolito"></div></div>
+    </section>
+
+    <section class="view" id="view-roles">
+      <div class="section-intro"><div><p class="eyebrow">TEMPO DE DESCANSAR E VIVER</p><h2>Rolês</h2><p>Guarde os planos e momentos de lazer com seus amigos.</p></div><button class="primary-button" id="add-role">＋ Novo rolê</button></div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">PLANOS E MEMÓRIAS</p><h3>Meus rolês</h3></div><input id="roles-month" type="month" aria-label="Filtrar mês dos rolês"></div><div id="roles-list" class="item-list"></div></div>
+    </section>
+
+    <footer><span>Feito para uma vida mais organizada.</span><span>Magnificat app · versão pessoal</span></footer>
+  </main>
+
+  <dialog id="task-dialog" class="modal"><form id="task-form" method="dialog"><div class="modal-heading"><div><p class="eyebrow">ORGANIZAÇÃO</p><h2>Nova data ou tarefa</h2></div><button class="icon-button" type="button" data-close="task-dialog" aria-label="Fechar">×</button></div><label for="task-title">Título</label><input id="task-title" maxlength="120" placeholder="Ex.: pagar conta de internet" required><div class="two-fields"><div><label for="task-date">Data</label><input id="task-date" type="date" required></div><div><label for="task-time">Horário (opcional)</label><input id="task-time" type="time"></div></div><label for="task-category">Categoria</label><select id="task-category"><option>Pessoal</option><option>Trabalho</option><option>Estudos</option><option>Saúde</option><option>Financeiro</option><option>Família</option><option>Outro</option></select><label for="task-notes">Observações (opcional)</label><textarea id="task-notes" rows="3" placeholder="Detalhes ou lembretes…"></textarea><label for="task-images">Imagens (opcional)</label><input id="task-images" type="file" accept="image/*" multiple><small class="upload-help">Anexe convites, documentos ou imagens relacionadas à tarefa.</small><div id="task-image-preview" class="image-preview"></div><button class="primary-button full-width" type="submit">Salvar data</button></form></dialog>
+
+  <dialog id="finance-dialog" class="modal"><form id="finance-form" method="dialog"><div class="modal-heading"><div><p class="eyebrow">SEU DINHEIRO</p><h2>Novo lançamento</h2></div><button class="icon-button" type="button" data-close="finance-dialog" aria-label="Fechar">×</button></div><label for="transaction-type">Tipo</label><select id="transaction-type"><option value="expense">Despesa</option><option value="income">Receita</option></select><label for="transaction-title">Descrição</label><input id="transaction-title" maxlength="100" placeholder="Ex.: mercado, salário…" required><div class="two-fields"><div><label for="transaction-amount">Valor (R$)</label><input id="transaction-amount" type="number" min="0.01" step="0.01" placeholder="0,00" required></div><div><label for="transaction-date">Data</label><input id="transaction-date" type="date" required></div></div><label for="transaction-category">Categoria</label><select id="transaction-category"><option>Alimentação</option><option>Moradia</option><option>Transporte</option><option>Saúde</option><option>Lazer</option><option>Salário</option><option>Freelance</option><option>Contas</option><option>Educação</option><option>Outros</option></select><label for="transaction-images">Comprovantes ou imagens (opcional)</label><input id="transaction-images" type="file" accept="image/*" multiple><small class="upload-help">Você pode anexar fotos de recibos ou comprovantes.</small><div id="transaction-image-preview" class="image-preview"></div><button class="primary-button full-width" type="submit">Salvar lançamento</button></form></dialog>
+
+  <dialog id="pastoral-dialog" class="modal"><form id="pastoral-form" method="dialog">
+    <div class="modal-heading"><div><p class="eyebrow" id="pastoral-dialog-eyebrow">MINHA VIDA PASTORAL</p><h2 id="pastoral-dialog-title">Novo registro</h2></div><button class="icon-button" type="button" data-close="pastoral-dialog" aria-label="Fechar">×</button></div>
+    <input id="pastoral-area" type="hidden">
+    <label for="pastoral-title">Título</label><input id="pastoral-title" maxlength="120" placeholder="Nome do evento ou responsabilidade" required>
+    <div class="two-fields"><div><label for="pastoral-date">Data</label><input id="pastoral-date" type="date" required></div><div><label for="pastoral-time">Horário</label><input id="pastoral-time" type="time"></div></div>
+    <div id="pastoral-category-wrap"><label for="pastoral-category">Tipo</label><select id="pastoral-category"><option>Evento</option><option>Reunião</option><option>Formação</option><option>Retiro</option><option>Cobertura</option><option>Outro</option></select></div>
+    <div id="pastoral-status-wrap" class="hidden"><label for="pastoral-status">Status</label><select id="pastoral-status"><option value="pending">Pendente</option><option value="done">Concluída</option></select></div>
+    <div id="pastoral-location-wrap"><label for="pastoral-location">Local (opcional)</label><input id="pastoral-location" maxlength="120" placeholder="Ex.: Matriz, salão paroquial…"></div>
+    <label for="pastoral-notes">Observações (opcional)</label><textarea id="pastoral-notes" rows="3" placeholder="Detalhes, materiais, função ou combinados…"></textarea>
+    <label for="pastoral-images">Imagens (opcional)</label><input id="pastoral-images" type="file" accept="image/*" multiple><small class="upload-help">Anexe até 5 imagens a este registro.</small><div id="pastoral-image-preview" class="image-preview"></div>
+    <button class="primary-button full-width" type="submit">Salvar registro</button>
+  </form></dialog>
+\n
+
+  <dialog id="role-dialog" class="modal"><form id="role-form" method="dialog">
+    <div class="modal-heading"><div><p class="eyebrow">LAZER E AMIZADES</p><h2>Novo rolê</h2></div><button class="icon-button" type="button" data-close="role-dialog" aria-label="Fechar">×</button></div>
+    <label for="role-title">Qual é o plano?</label><input id="role-title" maxlength="120" placeholder="Ex.: cinema com os amigos" required>
+    <div class="two-fields"><div><label for="role-date">Data</label><input id="role-date" type="date" required></div><div><label for="role-time">Horário</label><input id="role-time" type="time"></div></div>
+    <label for="role-location">Lugar (opcional)</label><input id="role-location" maxlength="120" placeholder="Ex.: shopping, parque…">
+    <label for="role-people">Com quem? (opcional)</label><input id="role-people" maxlength="180" placeholder="Nomes dos amigos">
+    <label for="role-notes">Detalhes (opcional)</label><textarea id="role-notes" rows="3" placeholder="Combinações, orçamento, o que levar…"></textarea>
+    <label for="role-images">Fotos ou referências (opcional)</label><input id="role-images" type="file" accept="image/*" multiple><div id="role-image-preview" class="image-preview"></div>
+    <button class="primary-button full-width" type="submit">Salvar rolê</button>
+  </form></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

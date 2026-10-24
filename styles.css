@@ -1,0 +1,94 @@
+
+/* Fundo visual enviado para a tela inicial do Magnificat */
+body {
+  background-color: var(--paper);
+  background-image: linear-gradient(rgba(244, 236, 223, 0.14), rgba(244, 236, 223, 0.14)), url("assets/fundo-inicio.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+:root{--ink:#4a1c25;--muted:#89766b;--line:#e6d8c6;--paper:#f4ecdf;--green:#702b3a;--green-dark:#5b1e2b;--mint:#ead9ca;--lilac:#eee1dc;--peach:#f3e2d1;--white:#fffdf9;--shadow:0 10px 35px rgba(91,30,43,.07)}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}.sidebar{width:244px;position:fixed;inset:0 auto 0 0;background:#fff;border-right:1px solid var(--line);padding:30px 18px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;gap:10px;align-items:center;padding:0 4px 34px}.brand-logo{height:48px;width:48px;object-fit:cover;object-position:center;border-radius:10px;border:1px solid var(--line);flex-shrink:0}.brand strong{display:block;font-size:15px;letter-spacing:-.4px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.sidebar nav{display:grid;gap:7px}.nav-link{border:0;background:transparent;text-align:left;padding:12px 13px;border-radius:10px;color:#68766e;display:flex;align-items:center;gap:13px;font-weight:550}.nav-link span{font-size:19px;width:22px;text-align:center}.nav-link.active,.nav-link:hover{background:#edf3ee;color:var(--green-dark)}.sidebar-bottom{margin-top:auto;display:flex;align-items:center;gap:9px;padding:12px 9px;color:#7b8982;font-size:10px;line-height:1.5}.privacy-dot{width:8px;height:8px;background:#5e9a73;border-radius:50%;flex-shrink:0}.main{margin-left:244px;padding:32px clamp(22px,4vw,58px) 20px;max-width:1600px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:27px}.eyebrow{font-size:10px;letter-spacing:1.6px;font-weight:750;color:#829087;margin:0 0 9px}.topbar h1{font-size:27px;letter-spacing:-1px;margin:0;font-weight:680}.primary-button,.secondary-button{border:0;border-radius:9px;padding:12px 17px;font-weight:650;transition:.15s}.primary-button{background:var(--green);color:white;box-shadow:0 4px 12px #315e491c}.primary-button:hover{background:#244a37;transform:translateY(-1px)}.secondary-button{background:#edf1ed;color:var(--ink)}.view{display:none}.view.active{display:block}.welcome-card{min-height:225px;background:#d0bd9f;color:#5b1e2b;border-radius:17px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.welcome-card .eyebrow{color:#702b3a}.welcome-card p:not(.eyebrow){color:#5b1e2b}.welcome-logo-wrap{width:118px;height:118px;border-radius:16px;overflow:hidden;flex-shrink:0;margin-left:auto;margin-right:24px;border:1px solid rgba(91,30,43,.12)}.welcome-logo{width:100%;height:100%;object-fit:cover;display:block}.welcome-card .eyebrow{color:#b8d0be}.welcome-card h2{font-size:35px;line-height:1.1;letter-spacing:-1.4px;margin:0 0 12px}.welcome-card p:not(.eyebrow){color:#d2e0d5;margin:0}.welcome-art{position:relative;width:40%;height:190px;align-self:stretch;overflow:hidden}.sun{position:absolute;right:23%;top:8px;width:87px;height:87px;background:#ead9bd;border-radius:50%}.hill{position:absolute;bottom:-88px;width:310px;height:200px;border-radius:50% 50% 0 0;transform:rotate(-10deg)}.hill-one{right:-25px;background:#8a4651}.hill-two{right:95px;bottom:-120px;background:#b58a83}.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}.stat-card,.panel{background:white;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.stat-card{padding:20px 22px;min-width:0}.stat-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;font-size:18px;margin-bottom:15px}.stat-icon.green{background:var(--mint)}.stat-icon.lilac{background:var(--lilac)}.stat-icon.peach{background:var(--peach)}.stat-card p{margin:0 0 7px;color:#68766e;font-size:12px}.stat-card strong{font-size:25px;letter-spacing:-.8px;display:block;overflow-wrap:anywhere}.stat-card small{display:block;color:#9aa49e;font-size:11px;margin-top:5px}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.panel{padding:22px;margin-bottom:18px;min-width:0}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.panel-heading h3,.diary-editor h3{margin:0;font-size:17px;letter-spacing:-.4px}.panel-heading .eyebrow{margin-bottom:5px}.text-button{border:0;background:transparent;color:var(--green);font-size:12px;font-weight:700;white-space:nowrap}.empty-state{text-align:center;color:#8c9891;font-size:12px;line-height:1.8;padding:26px 12px}.section-intro{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:6px 0 22px}.section-intro h2{font-size:29px;letter-spacing:-1px;margin:0 0 7px}.section-intro p:not(.eyebrow){margin:0;color:var(--muted)}.toolbar{display:flex;gap:10px;margin-bottom:16px}.toolbar input{flex:1}.toolbar input,.toolbar select{max-width:100%}input,select,textarea{border:1px solid #dfe6e0;background:#fff;border-radius:9px;padding:11px 12px;color:var(--ink);outline:none;width:100%;min-width:0}input:focus,select:focus,textarea:focus{border-color:#7ca58a;box-shadow:0 0 0 3px #dcebe0}label{font-size:12px;font-weight:650;display:block;margin:14px 0 7px}textarea{resize:vertical;line-height:1.6}.item-list{display:grid;gap:10px}.item-row{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid #f0f2ef}.item-row:last-child{border-bottom:0;padding-bottom:0}.item-main{flex:1;min-width:0}.item-title{font-weight:650;overflow-wrap:anywhere}.item-meta{font-size:11px;color:#8a968f;margin-top:5px;line-height:1.5}.item-note{font-size:12px;color:#68766e;margin-top:6px;white-space:pre-wrap;overflow-wrap:anywhere}.item-actions{display:flex;align-items:center;gap:5px}.mini-button{border:1px solid var(--line);background:#fff;color:#69766f;border-radius:7px;padding:6px 8px;font-size:11px}.mini-button:hover{background:#edf3ee}.check-button{border:1px solid #dce5dd;background:#fff;color:#4b7959;border-radius:50%;width:25px;height:25px;flex-shrink:0}.done .item-title{text-decoration:line-through;color:#98a29b}.done .check-button{background:#e5efe8}.diary-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:17px;align-items:start}.diary-editor h3{margin-bottom:18px}.mood-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.mood-row label{margin:12px 0}.mood-row select{width:auto;max-width:58%}#diary-form textarea{margin-top:12px}.form-actions{display:flex;gap:8px;margin-top:12px}.hidden{display:none!important}.finance-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:20px}.finance-card{padding:21px;border-radius:13px;border:1px solid var(--line);background:#fff}.finance-card p{margin:0 0 13px;color:#6c7971;font-size:12px}.finance-card strong{font-size:22px;letter-spacing:-.7px;display:block;overflow-wrap:anywhere}.finance-card small{display:block;color:#98a29b;margin-top:7px;font-size:11px}.finance-card.income{border-top:3px solid #7ea88b}.finance-card.expense{border-top:3px solid #dba08b}.finance-card.balance{border-top:3px solid #b3a1d4}.amount{font-weight:750;white-space:nowrap}.amount.income{color:#43805a}.amount.expense{color:#bd7057}.tag{font-size:10px;background:#f0f3f0;padding:4px 7px;border-radius:5px;color:#748078;display:inline-block;margin-top:5px}.modal{border:0;border-radius:16px;padding:26px;width:min(480px,calc(100% - 28px));box-shadow:0 20px 80px #0b211c44}.modal::backdrop{background:#12241c88;backdrop-filter:blur(3px)}.modal form{display:flex;flex-direction:column}.modal-heading{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}.modal-heading h2{font-size:22px;letter-spacing:-.7px;margin:0}.icon-button{border:0;background:#f0f3f0;border-radius:50%;height:31px;width:31px;font-size:22px;color:#58665d}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full-width{width:100%;margin-top:22px}footer{display:flex;justify-content:space-between;gap:12px;color:#9ba59e;font-size:10px;padding:23px 3px 8px}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:#1b382c;color:#fff;border-radius:10px;padding:12px 18px;opacity:0;pointer-events:none;transition:.25s;z-index:10;box-shadow:var(--shadow);font-size:12px}.toast.show{opacity:1;transform:translate(-50%,0)}.empty-inline{padding:20px 0;text-align:center;color:#929d95;font-size:12px}
+@media(max-width:900px){.sidebar{width:205px}.main{margin-left:205px;padding:25px 22px}.content-grid,.diary-layout{grid-template-columns:1fr}.welcome-art{width:34%}.welcome-card h2{font-size:30px}.stats-grid{gap:10px}.stat-card{padding:16px}.stat-card strong{font-size:21px}}
+@media(max-width:650px){.sidebar{inset:auto 0 0;width:100%;height:69px;padding:7px 9px calc(7px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--line);background:#fff}.brand,.sidebar-bottom{display:none}.sidebar nav{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:100%}.nav-link{padding:5px 2px;display:flex;flex-direction:column;justify-content:center;gap:2px;font-size:10px;border-radius:8px}.nav-link span{font-size:19px}.main{margin:0;padding:22px 15px 94px}.topbar{margin-bottom:20px}.topbar h1{font-size:22px}.topbar .eyebrow{font-size:9px}.topbar .primary-button{padding:10px 12px;font-size:12px}.welcome-card{min-height:185px;padding:24px 20px}.welcome-card h2{font-size:29px}.welcome-card p:not(.eyebrow){font-size:12px;max-width:220px;line-height:1.5}.welcome-art{position:absolute;right:-65px;bottom:0;width:48%;height:150px;opacity:.8}.sun{width:60px;height:60px;right:30%;top:5px}.hill{width:230px;height:140px;bottom:-65px}.hill-two{right:55px;bottom:-90px}.stats-grid{grid-template-columns:1fr 1fr}.stat-card{padding:14px}.stat-card:last-child{grid-column:1/-1}.stat-icon{margin-bottom:10px}.stat-card strong{font-size:20px}.content-grid{grid-template-columns:1fr}.panel{padding:17px}.section-intro{align-items:flex-start}.section-intro h2{font-size:25px}.section-intro p:not(.eyebrow){font-size:12px;line-height:1.5;max-width:250px}.section-intro .primary-button{padding:10px;font-size:11px;white-space:nowrap}.finance-summary{grid-template-columns:1fr}.finance-card{padding:16px}.finance-card strong{font-size:22px}.toolbar{flex-wrap:wrap}.toolbar input{flex-basis:100%}.toolbar select{width:100%}.item-row{gap:8px}.item-actions{flex-direction:column;align-items:stretch}.two-fields{gap:9px}.modal{padding:20px}footer{font-size:9px;flex-direction:column;gap:5px}}
+
+/* Anexos de imagens */
+.upload-help{display:block;color:#87938b;font-size:11px;line-height:1.5;margin-top:6px}
+input[type="file"]{padding:9px;background:#fbfcfa;font-size:12px}
+.image-preview,.attached-images{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.preview-thumb{position:relative;width:66px;height:66px;border-radius:9px;overflow:hidden;border:1px solid var(--line);background:#f3f5f2}
+.preview-thumb img,.attached-images img{width:100%;height:100%;object-fit:cover;display:block}
+.preview-thumb span{position:absolute;right:4px;bottom:4px;background:#1b382cdd;color:#fff;font-size:9px;padding:2px 5px;border-radius:4px}
+.attached-images a{display:block;width:76px;height:76px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#f3f5f2}
+.attached-images a:hover{outline:2px solid #9bbba4}
+
+/* Áreas da vida pastoral */
+.pastoral-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:-3px 0 20px}
+.pastoral-summary>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 20px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pastoral-summary strong{font-size:22px;letter-spacing:-.6px;color:var(--green-dark)}
+.pastoral-summary span{font-size:11px;color:#7b8982}
+.month-filter{max-width:165px}
+.pastoral-view .panel-heading{align-items:center}
+#view-pascom .section-intro .eyebrow{color:#688b75}
+#view-juventude .section-intro .eyebrow{color:#8a79ad}
+#view-nucleo .section-intro .eyebrow{color:#bd886b}
+#view-acolito .section-intro .eyebrow{color:#6c829f}
+@media(max-width:650px){
+  .sidebar{height:125px;padding:6px 7px calc(6px + env(safe-area-inset-bottom))}
+  .sidebar nav{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,1fr);gap:2px}
+  .nav-link{font-size:9px;gap:1px;min-width:0}
+  .nav-link span{font-size:16px}
+  .main{padding-bottom:145px}
+  .pastoral-summary{gap:8px}
+  .pastoral-summary>div{padding:13px;gap:6px}
+  .pastoral-summary strong{font-size:19px}
+  .pastoral-summary span{font-size:10px}
+  .month-filter{max-width:135px;font-size:11px;padding:9px 7px}
+}
+
+@media(max-width:760px){.welcome-logo-wrap{width:76px;height:76px;margin-right:0;margin-left:12px}.welcome-card{padding:24px}.brand-logo{width:40px;height:40px}}
+
+/* Melhorias: calendário geral, rolês e ícones */
+.nav-link span{font-size:17px;width:24px;display:inline-grid;place-items:center;flex-shrink:0}
+.calendar-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.calendar-toolbar h3{margin:0;text-transform:capitalize;flex:1;text-align:center;font-size:18px}
+.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.calendar-weekdays span{text-align:center;color:var(--muted);font-size:11px;font-weight:700;padding:8px 0}
+.calendar-cell{min-height:66px;border:1px solid var(--line);border-radius:10px;background:#fffdf9;color:var(--ink);padding:8px;display:flex;flex-direction:column;align-items:flex-start;gap:7px;text-align:left;min-width:0}
+.calendar-cell small{font-size:10px;color:var(--green);line-height:1.2}
+.calendar-cell.selected{border:2px solid var(--green);background:#f2e5d9}
+.calendar-cell.is-today span{font-weight:800;color:var(--green)}
+.calendar-cell.blank{background:transparent;border-color:transparent}
+@media(max-width:760px){.calendar-grid,.calendar-weekdays{gap:3px}.calendar-cell{min-height:48px;padding:5px;border-radius:7px;font-size:12px}.calendar-cell small{font-size:8px}.calendar-toolbar{gap:7px}.calendar-toolbar h3{font-size:15px}.calendar-toolbar .secondary-button{padding:9px 12px}}
+
+
+/* Ícones personalizados e páginas de categorias */
+.nav-link span img{width:23px;height:23px;object-fit:contain;display:block}
+.nav-link{color:var(--ink)}
+.nav-link.active,.nav-link:hover{background:#f2e6dc;color:var(--green-dark)}
+.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:20px}
+.category-card{display:flex;flex-direction:column;align-items:flex-start;gap:9px;text-align:left;padding:20px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);color:var(--ink);min-width:0;transition:transform .15s,border-color .15s}
+.category-card:hover{transform:translateY(-2px);border-color:#c7a8a0}
+.category-card img{width:54px;height:54px;object-fit:contain;align-self:flex-start}
+.category-card strong{font-size:15px}
+.category-card small{font-size:12px;color:var(--muted);line-height:1.5}
+.help-panel p{color:var(--muted);line-height:1.7;margin-bottom:0}
+@media(max-width:900px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category-card{padding:14px}.category-card img{width:44px;height:44px}.category-card strong{font-size:13px}.category-card small{font-size:11px}.nav-link span img{width:21px;height:21px}}
+
+
+/* Área integrada da Liturgia Diária da Canção Nova */
+.liturgia-panel { display: grid; gap: 16px; }
+.liturgia-heading { display: flex; align-items: center; gap: 14px; }
+.liturgia-heading h3 { margin: 0 0 5px; }
+.liturgia-heading p, .liturgia-panel > p { margin: 0; color: var(--muted, #756b68); }
+.liturgia-icon { width: 54px; height: 54px; object-fit: contain; }
+.liturgia-link { display: inline-flex; align-items: center; justify-content: center; width: fit-content; text-decoration: none; }
+.liturgia-embed-wrap { overflow: hidden; border: 1px solid rgba(91,30,43,.16); border-radius: 14px; background: #fff; }
+.liturgia-embed-wrap iframe { display: block; width: 100%; height: min(78vh, 900px); min-height: 620px; border: 0; background: #fff; }
+.embed-fallback { margin: 0; padding: 12px 14px; font-size: .9rem; color: #6f6262; }
+@media (max-width: 640px) {
+  .liturgia-embed-wrap iframe { height: 70vh; min-height: 520px; }
+  .liturgia-heading { align-items: flex-start; }
+}
