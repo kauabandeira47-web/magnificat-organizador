@@ -92,3 +92,115 @@ input[type="file"]{padding:9px;background:#fbfcfa;font-size:12px}
   .liturgia-embed-wrap iframe { height: 70vh; min-height: 520px; }
   .liturgia-heading { align-items: flex-start; }
 }
+
+/* Próxima versão Magnificat: biblioteca espiritual, galeria e ferramentas pessoais */
+:root { --burgundy:#5b1e2b; --burgundy-soft:#f3e7e8; --cream:#f4ecdf; }
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.muted-text{color:var(--muted,#786f6b);font-size:13px;line-height:1.65}
+.verse-panel{margin-top:18px;background:linear-gradient(135deg,#fbf5eb,#f1e2d5);border-color:#e7d5c5}
+.verse-panel blockquote{margin:10px 0 4px;font-family:Georgia,serif;font-size:clamp(22px,3vw,31px);line-height:1.35;color:var(--burgundy);max-width:700px}
+.verse-panel>p:not(.eyebrow){color:#8b786e;font-size:12px}
+.home-agenda{margin-top:18px}
+.calendar-toolbar #calendar-mode{max-width:135px;padding:9px;font-size:12px}
+.prayer-search-panel{margin-bottom:18px}
+.prayer-search-panel>label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}
+.filter-chips{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.chip-button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-size:12px;color:var(--muted);cursor:pointer}
+.chip-button.active{background:var(--burgundy-soft);color:var(--burgundy);border-color:#d8babe;font-weight:700}
+.prayer-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.prayer-cover-card{position:relative;display:block;padding:0;border:0;border-radius:16px;overflow:hidden;background:#e7ded2;cursor:pointer;box-shadow:var(--shadow);text-align:left;min-width:0;aspect-ratio:16/9}
+.prayer-cover-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .22s ease}
+.prayer-cover-card:hover img{transform:scale(1.025)}
+.prayer-cover-meta{position:absolute;top:10px;right:10px;border-radius:999px;padding:5px 9px;font-size:10px;background:#fffdf0e8;color:#5b1e2b;box-shadow:0 2px 12px #28160c18}
+.prayer-search-results{grid-column:1/-1;width:100%}
+.search-result-row{display:flex;justify-content:space-between;gap:14px;align-items:center;width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:13px 0;text-align:left;color:var(--ink);cursor:pointer}
+.search-result-row:last-child{border-bottom:0}
+.search-result-row small{color:var(--muted);text-align:right}
+.prayer-list{display:grid;gap:14px}
+.prayer-card,.note-card,.improvement-card,.goal-card{padding:19px;background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:12px;min-width:0}
+.prayer-card-top,.improvement-card-heading,.goal-heading,.note-card-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prayer-card h3,.improvement-card h3,.goal-card h3,.note-card h3{margin:0;font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.prayer-card-top .item-actions{flex-direction:row;flex-wrap:wrap;justify-content:flex-end}
+.prayer-body{font-size:14px;line-height:1.85;color:#49413f;white-space:normal;margin:16px 0;overflow-wrap:anywhere}
+.prayer-source{border-top:1px solid #f0e9e2;padding-top:12px;margin:12px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.prayer-source a,.panel a:not(.primary-button){color:var(--burgundy);font-weight:650}
+.vault-card{background:#faf5f0;border-style:dashed;border-color:#c8a7ad}
+.bible-feature{display:grid;grid-template-columns:minmax(180px,34%) 1fr;gap:25px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:20px;border-radius:16px;margin-bottom:20px;align-items:center}
+.bible-cover{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:11px;display:block}
+.bible-feature-copy h3{font-size:clamp(20px,2.5vw,27px);margin:8px 0;line-height:1.25}
+.bible-feature-copy p:not(.eyebrow){font-size:13px;line-height:1.7;color:var(--muted)}
+.gallery-toolbar .two-fields{align-items:end}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:18px 0}
+.gallery-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
+.gallery-image-button{display:block;width:100%;aspect-ratio:1/1;padding:0;border:0;background:#ede8e1;cursor:pointer;overflow:hidden}
+.gallery-image-button img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
+.gallery-image-button:hover img{transform:scale(1.035)}
+.gallery-card-info{padding:11px}
+.gallery-card-info strong{display:block;font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+.gallery-card-info small{display:block;margin:5px 0 8px;color:var(--muted);font-size:10px;overflow-wrap:anywhere}
+.gallery-card .item-actions{gap:5px;flex-wrap:wrap}
+.gallery-lightbox{width:min(900px,calc(100% - 24px));max-width:calc(100% - 24px);padding:16px;background:#211a19;color:#fff;position:relative}
+.gallery-lightbox img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:auto;object-fit:contain;border-radius:8px}
+.gallery-lightbox p{text-align:center;font-size:12px;color:#f8f0ea;margin:12px 30px 4px}
+.lightbox-close{position:absolute;top:10px;right:10px;z-index:2;background:#ffffffdf;color:#362b29}
+.profile-form{display:grid;gap:12px;max-width:760px}
+.profile-photo-area{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.profile-photo-area img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid #e7d9cd;background:#f8f1e8}
+.profile-photo-area>div{flex:1;min-width:0}
+.profile-photo-area label{display:block;font-weight:650;font-size:12px;margin-bottom:7px}
+.profile-form .two-fields{gap:16px}
+.note-card p,.improvement-card p{font-size:13px;line-height:1.7;white-space:normal;overflow-wrap:anywhere;color:#514844;margin:12px 0}
+.note-card-heading{align-items:center}
+.note-card .item-actions,.improvement-card .item-actions,.goal-card .item-actions{margin-top:12px;flex-direction:row;flex-wrap:wrap}
+.status-pill{font-size:10px;font-weight:700;border-radius:999px;padding:6px 9px;white-space:nowrap}
+.status-pending{background:#f5edda;color:#886019}.status-progress{background:#e6eefa;color:#355e96}.status-done{background:#e5f0e8;color:#2e6843}
+.improvement-card select{max-width:240px;margin-top:5px}
+.improvement-card label{display:block;color:var(--muted);font-size:11px;margin-top:8px}
+.goal-heading{flex-wrap:wrap;align-items:center}
+.goal-heading strong{font-size:12px;color:var(--green-dark);text-align:right}
+.goal-progress,.mini-progress{height:8px;border-radius:999px;background:#f0e9e3;overflow:hidden;margin:14px 0 8px}
+.goal-progress span,.mini-progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a77c86,#5b1e2b)}
+.goal-card>small{font-size:11px;color:var(--muted)}
+.setting-icon{font-size:27px;color:var(--burgundy);margin-bottom:10px}
+.setting-icon~h3{margin-top:0}
+#view-configuracoes .panel{align-self:start}
+#view-configuracoes .panel .primary-button,#view-configuracoes .panel .secondary-button{margin-top:12px}
+#view-configuracoes input[type=file]{display:block;width:100%;margin-top:6px}
+.checkbox-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.checkbox-row input{width:auto}
+.wide-modal{width:min(680px,calc(100% - 26px))}
+.wide-modal form{display:flex;flex-direction:column;gap:10px}
+#vault-note{min-height:240px;line-height:1.75}
+#view-intencoes>.item-list,#view-gratidao>.item-list{padding:18px}
+#view-intencoes .note-card:last-child,#view-gratidao .note-card:last-child{margin-bottom:0}
+#view-oracoes>.panel:last-child{margin-top:14px}
+.prayer-category-grid .empty-inline{grid-column:1/-1}
+@media(max-width:850px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bible-feature{grid-template-columns:1fr}.bible-cover{max-height:245px}.bible-feature-copy{padding:0 3px}}
+@media(max-width:650px){
+  .sidebar{height:123px;padding:5px 5px calc(5px + env(safe-area-inset-bottom))}
+  .sidebar nav{grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2px}
+  .nav-link{font-size:9px;white-space:normal;line-height:1.1;overflow-wrap:anywhere}
+  .nav-link span img{width:20px;height:20px}
+  .main{padding-bottom:142px}
+  .prayer-category-grid{gap:9px}
+  .prayer-cover-card{border-radius:10px}
+  .prayer-cover-meta{font-size:9px;top:5px;right:5px;padding:4px 6px}
+  .prayer-card,.note-card,.improvement-card,.goal-card{padding:14px}
+  .prayer-card-top{display:block}
+  .prayer-card-top .item-actions{justify-content:flex-start;margin-top:8px}
+  .prayer-body{font-size:13px;line-height:1.75}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .gallery-card-info{padding:8px}
+  .gallery-card-info .mini-button{font-size:10px;padding:6px}
+  .profile-photo-area{align-items:flex-start}
+  .profile-photo-area img{width:72px;height:72px}
+  .profile-form .two-fields{grid-template-columns:1fr;gap:8px}
+  .calendar-toolbar{flex-wrap:wrap}
+  .calendar-toolbar #calendar-mode{max-width:105px}
+  .improvement-card-heading{display:block}
+  .improvement-card-heading .status-pill{display:inline-block;margin-top:8px}
+  .item-actions{gap:6px;flex-wrap:wrap}
+  .item-actions .mini-button{white-space:normal}
+  .finance-lower{grid-template-columns:1fr}
+}
+.gallery-image-missing{display:flex;min-height:150px;align-items:center;justify-content:center;padding:18px;text-align:center;color:var(--muted);font-size:12px;line-height:1.5;background:#eee4d9;width:100%}

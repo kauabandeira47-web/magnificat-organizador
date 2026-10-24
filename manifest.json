@@ -1,7 +1,7 @@
 {
   "name": "Magnificat app",
   "short_name": "Magnificat",
-  "description": "Seu espaço pessoal para organizar datas, diário, finanças e vida pastoral.",
+  "description": "Seu espaço pessoal para organizar a vida, rezar, meditar a Palavra, cuidar das finanças e guardar memórias.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4ecdf",
